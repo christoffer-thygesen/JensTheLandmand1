@@ -17,6 +17,10 @@ namespace JensTheLandmand_v6
         {
             AreaRegistration.RegisterAllAreas();
             
+            //hvis projektet bliver kørt lokalt kan der ske en fejl her.
+            //Den første gang programmet kører, opretter den en admin bruger
+            //Næste gang programmet kører vil den lave en fejl
+            //Kommentere denne del ud, for at undgå den
             var context = new ApplicationDbContext();
             if (!context.Users.Any(user => user.UserName == "admin"))
             {
@@ -32,6 +36,7 @@ namespace JensTheLandmand_v6
 
                 userManager.AddToRole(applicationUser.Id, "Security");
             }
+            //Hertil
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
