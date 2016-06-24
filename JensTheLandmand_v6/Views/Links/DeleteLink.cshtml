@@ -1,0 +1,41 @@
+﻿@model JensTheLandmand_v6.Models.Links
+
+@{
+    ViewBag.Title = "Slet Link";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header page-heading">
+    <h2 class="pull-left">@ViewBag.Title</h2>
+    <div class="clearfix"></div>
+</div>
+
+<h3>Vil du slette dette link?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkDesc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Slet" class="btn btn-default" /> |
+            @Html.ActionLink("Tilbage til Links", "Index")
+        </div>
+    }
+</div>

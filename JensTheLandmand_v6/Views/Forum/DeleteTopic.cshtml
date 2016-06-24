@@ -1,0 +1,58 @@
+﻿@model JensTheLandmand_v6.Models.Topics
+
+@{
+    ViewBag.Title = "Slet Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-header page-heading">
+    <h2 class="pull-left">@ViewBag.Title</h2>
+    <div class="clearfix"></div>
+</div>
+
+
+<h3>Vil du slette denne Post?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AppUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Creator)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

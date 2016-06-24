@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Kontrol Panel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header page-heading">
+    <h2 class="pull-left">@ViewBag.Title</h2>
+    <div class="clearfix"></div>
+</div>
+
+<h3>Produkter</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Opret Produkt</h4>
+            </div>
+            <div class="panel-body">
+                <p>Opret dine egne vare og tilføj dem til listen</p>
+                @Html.ActionLink("Opret", "CreateProduct", "Shop", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Slet Produkt</h4>
+            </div>
+            <div class="panel-body">
+                <p>Slet uønskede produkter fra listen</p>
+                @Html.ActionLink("Slet", "Index", "Shop", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Ret Produkt</h4>
+            </div>
+            <div class="panel-body">
+                <p>Ret på produkterne</p>
+                @Html.ActionLink("Ret", "Index", "Shop", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Links</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Opret Link</h4>
+            </div>
+            <div class="panel-body">
+                <p>Klik på knappen og opret et product til listen</p>
+                @Html.ActionLink("Opret", "CreateLink", "Links", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Slet Link</h4>
+            </div>
+            <div class="panel-body">
+                <p>Klik på knappen og slet et produkt fra listen</p>
+                @Html.ActionLink("Slet", "Index", "Links", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Ret Link</h4>
+            </div>
+            <div class="panel-body">
+                <p>Klik på knappen og opret et product til listen</p>
+                @Html.ActionLink("Ret", "Index", "Links", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3>Forum</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Opret Post</h4>
+            </div>
+            <div class="panel-body">
+                <p>Opret et post på Forummet</p>
+                @Html.ActionLink("Opret", "CreateTopic", "Forum", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Slet Post</h4>
+            </div>
+            <div class="panel-body">
+                <p>Slet et post på Forummet</p>
+                @Html.ActionLink("Slet", "Index", "Forum", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><i class="fa fa-fw fa-check"></i>Ret Post</h4>
+            </div>
+            <div class="panel-body">
+                <p>Ret en post på Forummet</p>
+                @Html.ActionLink("Ret", "Index", "Forum", null, new {@class = "btn btn-primary"})
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <img src='@Url.Action("PieChart")'/>
+    </div>
+    <div class="col-md-3">
+        <img src='@Url.Action("DetailsPieChart")'/>
+    </div>
+    <div class="col-md-3">
+        <img src='@Url.Action("TotalUnikVisitsChart")'/>
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    @Html.ActionLink("Check bruger aktivitet","DisplayIpActivity","KontrolPanel", null, new {@class ="btn btn-primary"})
+</div>

@@ -1,0 +1,11 @@
+﻿@model UnikVisitsViewModel
+
+@{
+    var myChart = new Chart(width: 200, height: 200)
+        .AddTitle("Unik besøg")
+        .AddSeries(
+            name: "Sider",
+            xValue: new[] { "Unik besøgende" },
+            yValues: new[] { Model.IPList.Count() })
+        .Write();
+}

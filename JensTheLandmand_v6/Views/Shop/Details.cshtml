@@ -1,0 +1,46 @@
+﻿@model ProductDetails
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="thumbnail col-md-4">
+        <img src="data:image;base64,@System.Convert.ToBase64String(Model.ImgPath.Content)" height="150" width="320" />
+    </div>
+</div>
+
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.ProductPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Tilbage til Butik", "Index")
+</p>

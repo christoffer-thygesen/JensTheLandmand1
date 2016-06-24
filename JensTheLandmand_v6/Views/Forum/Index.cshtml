@@ -1,0 +1,59 @@
+﻿@model IEnumerable<JensTheLandmand_v6.Models.Topics>
+@{
+    ViewBag.Title = "Forum";
+}
+
+<div class="page-header page-heading">
+    <h2 class="pull-left">@ViewBag.Title</h2>
+    <ol class="breadcrumb pull-right where-am-i">
+        <li><a href="#">Forums</a></li>
+        <li class="active"></li>
+    </ol>
+    <div class="clearfix"></div>
+</div>
+<p class="lead">@ViewBag.Message</p>
+@Html.ActionLink("Opret Tråd", "CreateTopic", "Forum", null, new { @class = "btn btn-primary" })
+
+<table class="table forum table-striped">
+    <thead>
+    <tr>
+        <th class="cell-stat"></th>
+        <th>
+            <h3>Topics</h3>
+        </th>
+        <th class="cell-stat text-center hidden-xs hidden-sm">Svar</th>
+        <th class="cell-stat-2x hidden-xs hidden-sm">Last Post</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+            <td>
+                <h4>
+                    @Html.ActionLink(item.TopicTitle, "Comments", new {id = item.TopicID})
+                    <br>
+                    <small>@Html.DisplayFor(modelItem => item.TrimNote)</small>
+                </h4>
+            </td>
+            <td class="text-center hidden-xs hidden-sm"><a href="#">89 897</a></td>
+            <td class="hidden-xs hidden-sm">by <a href="#">@Html.DisplayFor(modelItem => item.Creator)</a>
+                <br>
+                <small>
+                    <i class="fa fa-clock-o"></i> 3 months ago
+                </small>
+            @if (User.IsInRole("Security"))
+            {
+                @Html.ActionLink("Delete", "DeleteTopic", new { id = item.TopicID })
+                <a>|</a>
+                            @Html.ActionLink("Edit", "EditTopic", new { id = item.TopicID })
+            }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

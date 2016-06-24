@@ -1,0 +1,26 @@
+﻿@model ChartProductDetailsViewModel
+
+@{
+    string[] names = new string[Model.ChartSortedList.Count()];
+    int[] counts = new int[Model.ChartSortedList.Count()];
+    int counter = 0;
+}
+
+@foreach (var item in Model.ChartSortedList)
+{
+    names[counter] = item.name;
+    counts[counter] = item.counts;
+    counter++;
+}
+
+@{
+
+
+    var myChart = new Chart(width: 200, height: 200)
+        .AddTitle("Vare besøgt i Details i alt")
+        .AddSeries(chartType: "Pie",
+            name: "Sider",
+            xValue: names,
+            yValues: counts)
+        .Write();
+}

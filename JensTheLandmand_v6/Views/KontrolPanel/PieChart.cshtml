@@ -1,0 +1,11 @@
+﻿@model ChartViewModel
+
+@{
+    var myChart = new Chart(width: 200, height: 200)
+        .AddTitle("Besøg i dag")
+        .AddSeries(chartType: "Pie",
+            name: "Sider",
+            xValue: new[] { "Forum", "Links", "Butik" },
+            yValues: new[] { Model.ForumList.Count(), Model.LinksList.Count(), Model.ShopList.Count() })
+        .Write();
+}

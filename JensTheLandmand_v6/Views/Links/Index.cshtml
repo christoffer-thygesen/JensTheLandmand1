@@ -1,0 +1,37 @@
+﻿@model IEnumerable<JensTheLandmand_v6.Models.Links>
+
+@{
+    ViewBag.Title = "Links";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header page-heading">
+    <h2 class="pull-left">@ViewBag.Title</h2>    
+    <div class="clearfix"></div>
+</div>
+<p class="lead">@ViewBag.Message</p>
+<br/>
+
+<table class="table forum table-striped">
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center"><i class="fa fa-question fa-2x text-primary"></i></td>
+            <td>
+                <h4>
+                    <a href="@item.LinkURL">@Html.DisplayFor(modelItem => item.TrimLink)</a>
+                    <br>
+                    <small>@Html.DisplayFor(modelItem => item.LinkDesc)</small>
+                </h4>
+                @if (User.IsInRole("Security"))
+                {
+                    @Html.ActionLink("Delete", "DeleteLink", new { id = item.LinksID })
+                    <a>|</a>
+                    @Html.ActionLink("Edit", "EditLink", new { id = item.LinksID })
+                }
+            </td>          
+        </tr>
+    }
+    </tbody>
+</table>

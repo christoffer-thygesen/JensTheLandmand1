@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Audit>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IPAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.URLAccessed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeAccessed)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URLAccessed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAccessed)
+            </td>
+
+        </tr>
+    }
+
+</table>

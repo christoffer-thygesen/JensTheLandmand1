@@ -1,0 +1,61 @@
+﻿@model ViewTopicAndCommentsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = @Model.topic.TopicTitle;
+
+}
+
+<div class="page-header page-heading">
+    <h2 class="pull-left">@Html.DisplayFor(item => item.topic.TopicTitle)</h2>
+    <ol class="breadcrumb pull-right where-am-i">
+        <li>@Html.ActionLink("Tilbage til Forum", "Index")</li>
+        <li class="active">@Html.DisplayFor(item => item.topic.TopicTitle)</li>
+    </ol>
+    <div class="clearfix"></div>
+</div>
+
+<ul class="media-list forum">
+    <!-- Forum Post -->
+    <li class="media well">
+        <div class="pull-left user-info" href="#">
+            <strong><a href="user.html">@Model.topic.Creator</a></strong>
+            <br>
+            <small class="btn-group btn-group-xs"></small>
+        </div>
+        <div class="media-body">
+            <!-- Post Info Buttons -->
+            <!-- Post Info Buttons END -->
+            <!-- Post Text -->
+            <p>
+                <div class="container">
+                    @Html.DisplayFor(item => item.topic.TopicNote)
+                </div>
+            </p>
+            <!-- Post Text EMD -->
+        </div>
+    </li>
+    <hr/>
+    @Html.ActionLink("Svar på Post", "CreateComment", new { id = Model.topic.TopicID }, new { @class = "btn btn-primary" })
+    @foreach (var c in Model.comments)
+    {
+        <li class="media well">
+            <div class="pull-left user-info" href="#">
+                <strong><a href="user.html">@Html.DisplayFor(modelItem => c.Creator)</a></strong>
+                <br>
+                <small class="btn-group btn-group-xs"></small>
+            </div>
+            <div class="media-body">
+                <!-- Post Info Buttons -->
+                <!-- Post Info Buttons END -->
+                <!-- Post Text -->
+                <p>
+                    <div class="container">
+                        @Html.Raw(c.Comment)
+                    </div>
+                </p>
+                <!-- Post Text EMD -->
+            </div>
+        </li>
+
+    }
+</ul >

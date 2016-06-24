@@ -1,0 +1,143 @@
+﻿/*NAVBAR - I think*/
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(64, 199, 75, 1);
+    background: -webkit-linear-gradient(top, rgba(67, 209, 148, 1) 0%, rgba(64, 199, 75, 1) 100%);
+    background: linear-gradient(to bottom, rgba(67, 209, 148, 1) 0%, rgba(64, 199, 75, 1) 100%);
+    border-bottom-width: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(64, 199, 75, 1);
+    background: -webkit-linear-gradient(top, rgba(67, 209, 148, 1) 0%, rgba(64, 199, 75, 1) 100%);
+    background: linear-gradient(to bottom, rgba(67, 209, 148, 1) 0%, rgba(64, 199, 75, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(51, 51, 51, 1);
+    background-color: rgba(189, 84, 23, 1);
+    background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(189, 84, 23, 1) 100%);
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(189, 84, 23, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(85, 85, 85, 1);
+    background-color: rgba(189, 84, 23, 1);
+    background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(189, 84, 23, 1) 100%);
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 1) 0%, rgba(189, 84, 23, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #bd5417;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #bd5417;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #bd5417;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #40c74b;
+}
+
+/*Til billedet*/
+.widewrapper {
+  width:100%;
+  }
+
+.widewrapper > img {
+  width:100%;
+}
+
+/*Til forummet*/
+.forum.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.forum .fa {
+    width: 1em;
+    text-align: center;
+}
+
+.forum.table th.cell-stat {
+    width: 6em;
+}
+
+.forum.table th.cell-stat-2x {
+    width: 14em;
+}
+
+tr:first-child {
+    width: 0;
+}
+
+/*Til comments*/
+.forum .forum-post-panel {
+    margin-bottom: 1em;
+}
+
+.forum.media-list li img.avatar {
+    display: block;
+    margin: 0 auto;
+}
+
+.forum.media-list li .user-info {
+    text-align: center;
+    width: 8em;
+}
+
+@media (max-width: 760px) {
+    .forum.media-list li .user-info {
+        float: none;
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+
+/*FRONT PAGE*/
+
+/*!
+ * Start Bootstrap - Business Frontpage HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+
+
+/* Header Image Background - Change the URL below to your image path (example: ../images/background.jpg) */
+
+.business-header {
+    height: 400px;
+    background: url(/images/farm.jpg) center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin-top: -20px;
+}
+
+/* Customize the text color and shadow color and to optimize text legibility. */
+
+.tagline {
+    text-shadow: 0 0 10px #000;
+    color: #fff;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+/*Butik IMG*/
+.butikItem {
+    max-height: 320px;
+    max-width: 150px;
+}
+
+.multiline-field {
+    height: 200px;
+}
