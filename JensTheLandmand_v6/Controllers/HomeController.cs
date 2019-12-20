@@ -11,6 +11,7 @@ namespace JensTheLandmand_v6.Controllers
         [Audit]
         public ActionResult Index()
         {
+            //Arctic Code Vault, baby!
             return View("Index", "_FrontPageView");
         }
     }
